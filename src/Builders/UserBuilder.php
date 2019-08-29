@@ -9,7 +9,7 @@ use App\Entity\User;
 class UserBuilder
 {
     /**
-     * @var UserInterface
+     * @var User
      */
     private $user;
 

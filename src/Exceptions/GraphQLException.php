@@ -9,11 +9,6 @@ use Symfony\Component\Form\FormInterface;
 
 class GraphQLException extends UserErrors
 {
-    private function __construct(array $errors, $message = '', $code = 0, \Exception $previous = null)
-    {
-        parent::__construct($errors, $message, $code, $previous);
-    }
-
     /**
      * @param string $message
      */
@@ -43,7 +38,7 @@ class GraphQLException extends UserErrors
 
         foreach ($form->all() as $child) {
             if (!$child->isValid()) {
-                $errors = array_merge($errors, static::getPlainErrors($child));
+                $errors[] =static::getPlainErrors($child);
             }
         }
 
