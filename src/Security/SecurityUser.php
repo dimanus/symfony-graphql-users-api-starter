@@ -161,7 +161,7 @@ class SecurityUser implements AdvancedUserInterface, EquatableInterface, \Serial
             $this->salt,
             $this->password,
             $this->roles,
-            $this->enableds
+            $this->enabled
         ] = unserialize($serialized, false);
     }
 }
